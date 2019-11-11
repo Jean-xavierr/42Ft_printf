@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 11:14:43 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/11 15:53:11 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/11 16:42:31 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ static void		ft_print_flags_zero(va_list ap, t_storage *storage)
 	i = ft_strlen(s);
 	while (i++ < storage->flags_nb)
 		write(1, "0", 1);
-	ft_putstr(s);
+	while (*s)
+		ft_putchar(*s++);
 }
 
 static void		ft_print_flags_minus(va_list ap, t_storage *storage)
@@ -31,7 +32,8 @@ static void		ft_print_flags_minus(va_list ap, t_storage *storage)
 	
 	s = va_arg(ap, char *);
 	i = ft_strlen(s);
-	ft_putstr(s);
+	while (*s)
+		ft_putchar(*s++);
 	while (i++ < storage->flags_nb)
 		write(1, " ", 1);
 }
@@ -49,7 +51,20 @@ static void		ft_print_flags_width_precision(va_list ap, t_storage *storage)
 	else if (storage->precision == '*')
 		while (i++ < storage->precision_nb)
 			write(1, " ", 1);
-	ft_putstr(s);
+	while (*s)
+		ft_putchar(*s++);
+}
+
+static void		ft_print_flags_point(va_list ap, t_storage *storage)
+{
+	int		i;
+	char	*s;
+
+	i = 0;
+	s = 0;
+	s = va_arg(ap, char *);
+	while (storage->precision_nb-- > 0 && s[i])
+		ft_putchar(s[i++]);
 }
 
 void			ft_print_type_s(va_list ap, t_storage *storage)
@@ -60,15 +75,14 @@ void			ft_print_type_s(va_list ap, t_storage *storage)
 		ft_print_flags_minus(ap, storage);
 	else if (storage->width >= 1 || storage->precision == '*')
 		ft_print_flags_width_precision(ap, storage);
+	else if (storage->precision == '.')
+		ft_print_flags_point(ap, storage);
 	else
-		ft_putstr(va_arg(ap, char *));
-}
-
-void			ft_putstr(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-		ft_putchar(str[i++]);
+	{
+		char *s;
+		
+		s = va_arg(ap, char *);
+		while (*s)
+			ft_putchar(*s++);
+	}
 }
