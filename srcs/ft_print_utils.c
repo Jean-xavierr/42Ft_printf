@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:57:40 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/11 14:15:59 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/11 15:45:26 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ void		ft_print_convers(const char *s, int i, va_list ap, t_storage *storage)
 {
 	if (s[i] == 'c')
 		ft_print_type_c(ap, storage);
-/*	if (s[i] == 's')
+	if (s[i] == 's')
 		ft_print_type_s(ap, storage);
-	if (s[i] == 'd' || s[i] == 'u' || s[i] == 'i')
+/*	if (s[i] == 'd' || s[i] == 'u' || s[i] == 'i')
 		ft_print_type_integer(s[i], ap, storage);
 	if (s[i] == 'x' || s[i] == 'X')
 		ft_print_type_convert_hex(s[i], ap, storage);
