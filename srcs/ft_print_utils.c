@@ -6,13 +6,13 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:57:40 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/11 13:43:26 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/11 14:15:59 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int		ft_strlen(char *s)
+int			ft_strlen(char *s)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ int		ft_strlen(char *s)
 	return (i);
 }
 
-int		ft_strlen_nb(long nb)
+int			ft_strlen_nb(long nb)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ int		ft_strlen_nb(long nb)
 	return (i);
 }
 
-int		ft_check_flags(const char *s, int i, t_storage *storage)
+int			ft_check_flags(const char *s, int i, va_list ap, t_storage *storage)
 {
 	if (s[i] == '-')
 	{
@@ -76,16 +76,19 @@ int		ft_check_flags(const char *s, int i, t_storage *storage)
 	{
 		storage->precision = s[i];
 		i++;
-		while (s[i] >= '0' && s[i] <= '9')
-		{
-			storage->precision_nb = storage->precision_nb * 10 + s[i] - 48;
-			i++;
-		}
+		if (ft_is_convers(s[i]))
+			storage->precision_nb = va_arg(ap, int);
+		else
+			while (s[i] >= '0' && s[i] <= '9')
+			{
+				storage->precision_nb = storage->precision_nb * 10 + s[i] - 48;
+				i++;
+			}
 	}
 	return (i);
 }
 
-void	ft_print_convers(const char *s, int i, va_list ap, t_storage *storage)
+void		ft_print_convers(const char *s, int i, va_list ap, t_storage *storage)
 {
 	if (s[i] == 'c')
 		ft_print_type_c(ap, storage);

@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 10:55:22 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/11 13:26:38 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/11 14:14:53 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_is_convers(char c)
 }
 
 int		ft_is_flags(char c)
-{	
+{
 	int		i;
 	char	*storage_flags;
 
@@ -47,9 +47,9 @@ int		ft_is_flags(char c)
 int		ft_check_string(const char *s, int i, va_list ap, t_storage *storage)
 {
 	while ((ft_is_convers(s[i]) || ft_is_flags(s[i])) && s[i])
-	{	
+	{
 		if (ft_is_flags(s[i]))
-			i = ft_check_flags(s, i, storage);
+			i = ft_check_flags(s, i, ap, storage);
 		else if (ft_is_convers(s[i]))
 		{
 			ft_print_convers(s, i, ap, storage);
@@ -64,9 +64,9 @@ int		ft_check_string(const char *s, int i, va_list ap, t_storage *storage)
 void	ft_printf(const char *s, ...)
 {
 	int				i;
-	va_list 		ap;
-	t_storage		storage;	
-	
+	va_list			ap;
+	t_storage		storage;
+
 	i = 0;
 	va_start(ap, s);
 	storage.return_printf = 0;

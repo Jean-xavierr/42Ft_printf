@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 10:55:15 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/11 13:33:03 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/11 14:10:10 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ typedef struct		s_storage
 
 void	ft_printf(const char *s, ...);
 void	ft_print_convers(const char *s, int i, va_list ap, t_storage *storage);
-int		ft_check_flags(const char *s, int i, t_storage *storage);
+int		ft_check_flags(const char *s, int i, va_list ap, t_storage *storage);
+int		ft_is_convers(char c);
 
 t_storage ft_init_struct(t_storage storage);
 
