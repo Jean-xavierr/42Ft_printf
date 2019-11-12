@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:57:40 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/12 11:21:17 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/12 14:41:11 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,9 @@ void		ft_print_convers(const char *s, int i, va_list ap, t_data *data)
 		ft_print_type_s(ap, data);
 	if (s[i] == 'd' || s[i] == 'u' || s[i] == 'i')
 		ft_print_type_integer(s[i], ap, data);
-/*	if (s[i] == 'x' || s[i] == 'X')
+	if (s[i] == 'x' || s[i] == 'X')
 		ft_print_type_convert_hex(s[i], ap, data);
-	if (s[i] == 'p')
+/*	if (s[i] == 'p')
 		ft_print_type_p(ap, data);*/
 }
 
