@@ -8,7 +8,8 @@ SRCS =	ft_printf.c \
 		ft_print_type_integer.c \
 		ft_print_type_s.c \
 		ft_print_type_p.c \
-		ft_print_type_convert_hex.c 
+		ft_print_type_convert_hex.c \
+		ft_putstr.c 
 
 _SRC = $(addprefix $(PATH), $(SRCS))
 
@@ -18,7 +19,7 @@ INCLUDES = ./includes
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+##CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
