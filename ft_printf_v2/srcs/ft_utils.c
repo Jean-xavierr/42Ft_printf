@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 13:50:54 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/15 15:29:52 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/16 15:22:56 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	ft_reinit_flags(t_data *data)
 {
 	if (!(data->set = (char *)malloc(sizeof(char *))))
 		return ;
+	data->set[0] = '\0';
 	data->flags = '~';
 	data->flags_nb = 0;
 	data->width = 0;
-	data->precision = 0;
 	data->precision_nb = 0;
 }
 
@@ -46,7 +46,6 @@ void	ft_init(const char *s, t_data *data)
 	data->flags = '~';
 	data->flags_nb = 0;
 	data->width = 0;
-	data->precision = 0;
 	data->precision_nb = 0;
 	data->return_printf = 0;
 }

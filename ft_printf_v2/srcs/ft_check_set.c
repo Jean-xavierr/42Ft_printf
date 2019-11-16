@@ -6,13 +6,13 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 14:48:02 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/15 15:23:22 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/16 15:43:47 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int	ft_is_flags(char c)
+int			ft_is_flags(char c)
 {
 	int		i;
 	char	*flags;
@@ -28,7 +28,7 @@ static int	ft_is_flags(char c)
 	return (0);
 }
 
-static int	ft_is_convers(char c)
+int			ft_is_convers(char c)
 {
 	int		i;
 	char	*convers;
