@@ -6,6 +6,8 @@ SRCS =	ft_printf.c \
 		ft_utils.c \
 		ft_check_set.c \
 		ft_strjoin.c \
+		ft_flags_management.c \
+		ft_display_management.c \
 
 _SRC = $(addprefix $(PATH), $(SRCS))
 
