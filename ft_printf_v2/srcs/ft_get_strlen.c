@@ -6,9 +6,11 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 15:32:27 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/18 15:56:32 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/19 10:15:13 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/ft_printf.h"
 
 int		ft_strlen(char *s)
 {
@@ -57,13 +59,13 @@ int		ft_get_strlen(t_data *data)
 		return (1);
 	else if (data->convers == 's')
 		return (ft_strlen((char *)data->arg));
-	else if (data->convers == 'p')
+/*	else if (data->convers == 'p')
 		return (ft_strlen_nb_hex((unsigned long)data->arg) + 2 );
 	else if (data->convers == 'd' || data->convers == 'i')
 		return (ft_strlen(ft_itoa((int)data->arg));
 	else if (data->convers == 'u')
 		return (ft_strlen(ft_itoa((int)data->arg));
 	else if (data->convers == 'x' || data->conver == 'X')
-		return (ft_strlen_nb_hex((unsigned int)data->arg);
+		return (ft_strlen_nb_hex((unsigned int)data->arg);*/
 	return (0);
 }

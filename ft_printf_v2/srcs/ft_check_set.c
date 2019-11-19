@@ -6,11 +6,27 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 14:48:02 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/16 15:43:47 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/19 10:31:53 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+int			ft_is_number(char c)
+{
+	int		i;
+	char	*tab;
+
+	i = 0;
+	tab = "0123456789";
+	while (tab[i])
+	{
+		if (tab[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 int			ft_is_flags(char c)
 {

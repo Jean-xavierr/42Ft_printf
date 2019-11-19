@@ -8,6 +8,7 @@ SRCS =	ft_printf.c \
 		ft_strjoin.c \
 		ft_flags_management.c \
 		ft_display_management.c \
+		ft_get_strlen.c \
 
 _SRC = $(addprefix $(PATH), $(SRCS))
 

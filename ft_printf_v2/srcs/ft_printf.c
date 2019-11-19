@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 13:44:05 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/18 15:30:01 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/19 10:34:22 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int		ft_check_is_width(int i, t_data *data)
 	else if (data->set[i] == '*')
 	{
 		data->width = 0;
-		if (ft_is_convers(data->set[i + 1]) || data->set[i + 1] == '*')
+		if (!ft_is_number(data->set[i + 1]))
 		{
 			data->width = va_arg(data->ap, int);
 			if (data->width < 0)
@@ -118,7 +118,7 @@ int				ft_check_string(int i, t_data *data)
 	printf("flags_width = %d\n", data->width);
 	printf("flags_pre = %d\n", data->precision);
 	printf("data->c = %c\n\n", data->convers);
-	data->arg = va_arg(data->ap, int);
+	data->arg = va_arg(data->ap, void *);
 	while (data->set[n++])
 	{
 		if (ft_is_char(data->set[n]))

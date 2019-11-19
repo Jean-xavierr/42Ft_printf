@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:00:06 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/18 15:38:29 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/19 10:08:46 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		ft_putstr(char *s, t_data *data)
 void		ft_display_management(t_data *data)
 {
 	if (data->convers == 'c')
-		ft_putchar(data->arg, data);
+		ft_putchar((char)data->arg, data);
 	else if (data->convers == 's')
 		ft_putstr((char *)data->arg, data);
 }

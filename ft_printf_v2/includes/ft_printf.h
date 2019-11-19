@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 13:06:37 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/18 15:48:36 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/19 10:34:24 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void				ft_reinit_flags(t_data *data);
 void				ft_init(const char *s, t_data *data);
 
 // ---> ft_check_set.c <---
+int					ft_is_number(char c);
 int					ft_is_flags(char c);
 int					ft_is_convers(char c);
 int					ft_is_char(char c);
