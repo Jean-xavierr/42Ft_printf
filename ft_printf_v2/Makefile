@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jereligi <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/11/19 16:29:40 by jereligi          #+#    #+#              #
+#    Updated: 2019/11/19 16:30:39 by jereligi         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
 
 PATH = ./srcs/
@@ -9,6 +21,8 @@ SRCS =	ft_printf.c \
 		ft_flags_management.c \
 		ft_display_management.c \
 		ft_get_strlen.c \
+		ft_exception_flag.c \
+		ft_itoa.c
 
 _SRC = $(addprefix $(PATH), $(SRCS))
 

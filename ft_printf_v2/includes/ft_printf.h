@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 13:06:37 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/19 10:34:24 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/19 16:30:44 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct		s_data
 	int			width;
 	int			precision;
 	char		convers;
-	char		*arg;
+	void		*arg;
 	int			return_printf;
 }					t_data;
 
@@ -47,10 +47,8 @@ int					ft_is_convers(char c);
 int					ft_is_char(char c);
 int					ft_check_set(char c);
 
-// ---> ft_strjoin.c <---
-char				*ft_strjoin_char(char *s1, char c);
-
 // ---> ft_display_management <---
+void		ft_putstr(char *s, t_data *data);
 void		ft_display_management(t_data *data);
 
 // ---> ft_flags_management.c <---
@@ -58,9 +56,15 @@ void		ft_flags_management(t_data *data);
 
 // ---> ft_get_strlen.c <---
 int			ft_strlen(char *s);
-int			ft_strlen_nb(long nb);
 int			ft_strlen_nb_hex(long nb);
 int			ft_get_strlen(t_data *data);
+
+// ---> ft_exception_flag.c <---
+void		ft_exception_flag_zero(t_data *data);
+int			ft_nb_is_negative(t_data *data);
+
+// ---> ft_strjoin.c <---
+char				*ft_strjoin_char(char *s1, char c);
 
 // ---> ft_itoa.c <---
 char		*ft_itoa(int n);

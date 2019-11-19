@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 13:44:05 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/19 10:34:22 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/19 16:32:32 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,12 +112,12 @@ int				ft_check_string(int i, t_data *data)
 		}
 		i++;
 	}
-	printf("set = %s\n", data->set);
+	//printf("set = %s\n", data->set);
 	ft_check_flags(data);
-	printf("flags = %c\n", data->flags);
+	/*printf("flags = %c\n", data->flags);
 	printf("flags_width = %d\n", data->width);
 	printf("flags_pre = %d\n", data->precision);
-	printf("data->c = %c\n\n", data->convers);
+	printf("data->c = %c\n\n", data->convers);*/
 	data->arg = va_arg(data->ap, void *);
 	while (data->set[n++])
 	{
