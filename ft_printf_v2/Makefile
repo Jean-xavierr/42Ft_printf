@@ -6,7 +6,7 @@
 #    By: jereligi <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 16:29:40 by jereligi          #+#    #+#              #
-#    Updated: 2019/11/19 16:30:39 by jereligi         ###   ########.fr        #
+#    Updated: 2019/11/20 13:53:48 by jereligi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRCS =	ft_printf.c \
 		ft_display_management.c \
 		ft_get_strlen.c \
 		ft_exception_flag.c \
-		ft_itoa.c
+		ft_itoa.c \
+		ft_atoi.c
 
 _SRC = $(addprefix $(PATH), $(SRCS))
 

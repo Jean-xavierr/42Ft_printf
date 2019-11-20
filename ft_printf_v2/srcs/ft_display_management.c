@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:00:06 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/19 16:59:41 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/20 14:12:19 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void		ft_putstr(char *s, t_data *data)
 			write(1, &s[i++], 1);
 			data->return_printf++;
 		}
-	else 
+	else
 		while (s[i])
-		{	
+		{
 			write(1, &s[i++], 1);
 			data->return_printf++;
 		}

@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 14:48:02 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/19 10:31:53 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/20 14:11:25 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int			ft_is_char(char c)
 	return (0);
 }
 
-int		ft_check_set(char c)
+int			ft_check_set(char c)
 {
 	if (ft_is_flags(c))
 		return (1);

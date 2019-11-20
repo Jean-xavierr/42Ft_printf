@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 13:06:37 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/19 16:30:44 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/20 13:56:50 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,8 @@ char				*ft_strjoin_char(char *s1, char c);
 
 // ---> ft_itoa.c <---
 char		*ft_itoa(int n);
+
+// ---> ft_atoi.c <---
+int			ft_atoi(char *str, int *i);
 
 #endif

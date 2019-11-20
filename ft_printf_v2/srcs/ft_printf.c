@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 13:44:05 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/19 17:00:24 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/20 13:59:05 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ static int		ft_check_is_minus_or_zero(int i, t_data *data)
 		else if (data->set[i++] == '*')
 			data->width = va_arg(data->ap, int);
 		else
+		{
 			data->flags = '~';
+			i--;
+		}
 	}
 	else if (data->set[i] == '0' && data->flags != '-')
 	{
@@ -82,8 +85,9 @@ void			ft_check_flags(t_data *data)
 			i = n;
 		else if (i < (n = ft_check_is_width(i, data)))
 			i = n;
-		else if (data->set[i++] == '.')
+		else if (data->set[i] == '.')
 		{
+			i++;
 			if (data->set[i] != '*')
 			{
 				data->precision = 0;
@@ -117,9 +121,9 @@ int				ft_check_string(int i, t_data *data)
 		}
 		i++;
 	}
-	//printf("set = %s\n", data->set);
+//	printf("set = %s\n", data->set);
 	ft_check_flags(data);
-	/*printf("flags = %c\n", data->flags);
+/*	printf("flags = %c\n", data->flags);
 	printf("flags_width = %d\n", data->width);
 	printf("flags_pre = %d\n", data->precision);
 	printf("data->c = %c\n\n", data->convers);*/

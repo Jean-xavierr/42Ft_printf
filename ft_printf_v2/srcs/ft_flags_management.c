@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:11:46 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/19 17:02:46 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/20 14:18:06 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static void		ft_flag_width(t_data *data)
 {
 	int	precision;
-	
-	if (data->precision > 0 && ft_get_strlen(data) > data->precision)
+
+	if (data->precision >= 0 && ft_get_strlen(data) > data->precision)
 		precision = data->precision;
 	else if (ft_get_strlen(data) != 0)
 		precision = ft_get_strlen(data);
@@ -24,17 +24,18 @@ static void		ft_flag_width(t_data *data)
 		precision = 0;
 	while (precision++ < data->width)
 		ft_putchar(' ', data);
-	ft_display_management(data);	
+	ft_display_management(data);
 }
 
 static void		ft_flag_zero(t_data *data)
 {
+	int	precision;
+
+	precision = 0;
 	if (ft_nb_is_negative(data))
 		ft_exception_flag_zero(data);
 	else
 	{
-		int	precision;
-		
 		if (data->precision > 0)
 			precision = data->precision;
 		else
@@ -50,7 +51,7 @@ static void		ft_flag_minus(t_data *data)
 	int	precision;
 
 	ft_display_management(data);
-	if (data->precision > 0 && ft_get_strlen(data) > data->precision)
+	if (data->precision >= 0 && ft_get_strlen(data) > data->precision)
 		precision = data->precision;
 	else
 		precision = ft_get_strlen(data);
