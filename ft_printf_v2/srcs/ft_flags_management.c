@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:11:46 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/20 14:18:06 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/21 11:25:35 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void		ft_flag_zero(t_data *data)
 
 	precision = 0;
 	if (ft_nb_is_negative(data))
-		ft_exception_flag_zero(data);
+		ft_exception_flag_zero_integer(data);
 	else
 	{
 		if (data->precision > 0)
@@ -61,7 +61,9 @@ static void		ft_flag_minus(t_data *data)
 
 void			ft_flags_management(t_data *data)
 {
-	if (data->flags == '-')
+	if (data->convers != 's' && data->convers != 'c')
+		ft_flags_management_integer(data);
+	else if (data->flags == '-')
 		ft_flag_minus(data);
 	else if (data->flags == '0')
 		ft_flag_zero(data);

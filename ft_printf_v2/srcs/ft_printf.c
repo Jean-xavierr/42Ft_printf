@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 13:44:05 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/20 13:59:05 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/21 11:26:18 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int		ft_check_is_minus_or_zero(int i, t_data *data)
 		if (data->set[i] >= '0' && data->set[i] <= '9')
 			while (data->set[i] >= '0' && data->set[i] <= '9')
 				data->width = data->width * 10 + (data->set[i++] - '0');
-		else if (data->set[i++] == '*')
+		else if (data->set[i] == '*')
 			data->width = va_arg(data->ap, int);
 	}
 	return (i);
@@ -139,7 +139,7 @@ int				ft_check_string(int i, t_data *data)
 		else if (data->set[n + 1] == '\0')
 		{
 			ft_flags_management(data);
-			n++; ;
+			n++;
 		}
 	}
 	return (i);
