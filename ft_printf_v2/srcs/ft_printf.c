@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 13:44:05 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/21 11:26:18 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/22 16:57:16 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ int				ft_check_string(int i, t_data *data)
 	while ((ft_check_set(data->str[i]) && data->str[i]))
 	{
 		data->set = ft_strjoin_char(data->set, data->str[i]);
-		if (ft_is_convers(data->str[i]))
+		if (ft_is_convers(data->str[i]) || data->str[i] == '%')
 		{
 			data->convers = data->str[i++];
 			break ;

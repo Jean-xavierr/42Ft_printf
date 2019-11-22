@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:00:06 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/22 14:42:41 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/22 16:56:56 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,20 @@ void		ft_putstr(char *s, t_data *data)
 
 	i = 0;
 	precision = data->precision;
+	if (data->convers == 'p')
+	{
+		ft_putchar('0', data);
+		ft_putchar('x', data);
+	}
 	if ((data->convers != 's' && data->convers != 'c') && (data->precision > 0
 	&& s[0] != '0'))
 		precision = -1;
 	if (precision >= 0)
 		while (i < precision && s[i])
-		{
-			write(1, &s[i++], 1);
-			data->return_printf++;
-		}
+			ft_putchar(s[i++], data);
 	else
 		while (s[i])
-		{
-			write(1, &s[i++], 1);
-			data->return_printf++;
-		}
+			ft_putchar(s[i++], data);
 }
 
 void		ft_display_management(t_data *data)
@@ -48,4 +47,8 @@ void		ft_display_management(t_data *data)
 		ft_putstr(ft_unsigned_itoa((unsigned int)data->arg), data);
 	else if (data->convers == 'x' || data->convers == 'X')
 		ft_putstr(ft_itox((unsigned int)data->arg, data), data);
+	else if (data->convers == 'p')
+		ft_putstr(ft_ultox((unsigned long)data->arg), data);
+	else if (ft_is_convers(data->convers) == 0)
+		ft_putchar(data->convers, data);	
 }
