@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:00:06 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/21 14:34:19 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/22 10:38:08 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void		ft_putstr(char *s, t_data *data)
 
 	i = 0;
 	precision = data->precision;
-	if ((data->convers == 'd' || data->convers == 'i') && (data->precision > 0 && s[0] != '0'))
+	if ((data->convers == 'd' || data->convers == 'i') && (data->precision > 0
+	&& s[0] != '0'))
 		precision = -1;
 	if (precision >= 0)
 		while (i < precision && s[i])
