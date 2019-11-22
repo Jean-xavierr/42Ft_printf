@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:00:06 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/22 10:38:08 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/22 11:29:08 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		ft_putstr(char *s, t_data *data)
 
 	i = 0;
 	precision = data->precision;
-	if ((data->convers == 'd' || data->convers == 'i') && (data->precision > 0
+	if ((data->convers != 's' || data->convers != 'c') && (data->precision > 0
 	&& s[0] != '0'))
 		precision = -1;
 	if (precision >= 0)
@@ -44,4 +44,6 @@ void		ft_display_management(t_data *data)
 		ft_putstr((char *)data->arg, data);
 	else if (data->convers == 'd' || data->convers == 'i')
 		ft_putstr(ft_itoa((int)data->arg), data);
+	else if (data->convers == 'u')
+		ft_putstr(ft_unsigned_itoa((unsigned int)data->arg), data);
 }
