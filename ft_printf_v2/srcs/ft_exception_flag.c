@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 15:43:33 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/21 16:24:33 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/22 10:12:01 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,27 @@ void		ft_exception_flag_zero_integer(t_data *data)
 	int		precision;
 	int		len_nb;
 	int		width;
+	int		i;
 	char	*s;
 
 	len_nb = ft_get_strlen(data);
-	ft_putchar('-', data);
+	i = 0;
+	if (data->precision > data->width)
+	{
+		ft_putchar('-', data);
+		i++;
+	}
 	width = data->width;
 	if (data->precision > 0 || data->width > 0)
 		precision = data->precision + 1;
 	else
 		precision = len_nb;		
-	while (width-- > data->precision && data->precision > 0 && width >= len_nb)
+	while (width-- > precision && precision > 0 && width >= len_nb)
 		ft_putchar(' ', data);
-	while ((precision-- > data->width && precision >= len_nb) || (width-- >= len_nb))
+	if (i == 0)
+		ft_putchar('-', data);
+	while (((precision-- > data->width && precision >= len_nb) ||
+		(width-- >= len_nb)) || precision >= len_nb)
 		ft_putchar('0', data);
 	s = ft_itoa((int)data->arg);
 	ft_putstr(&s[1], data);
