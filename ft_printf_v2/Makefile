@@ -6,7 +6,7 @@
 #    By: jereligi <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 16:29:40 by jereligi          #+#    #+#              #
-#    Updated: 2019/11/22 11:05:02 by jereligi         ###   ########.fr        #
+#    Updated: 2019/11/22 14:23:10 by jereligi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS =	ft_printf.c \
 		ft_exception_flag.c \
 		ft_itoa.c \
 		ft_unsigned_itoa.c \
+		ft_itox.c \
 		ft_atoi.c
 
 _SRC = $(addprefix $(PATH), $(SRCS))

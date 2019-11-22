@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 13:06:37 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/22 11:34:24 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/22 14:24:03 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int			ft_nb_is_negative(t_data *data);
 
 // ---> ft_get_strlen.c <---
 int			ft_strlen(char *s);
+char		*ft_get_string_nb(t_data *data);
 int			ft_strlen_nb_hex(long nb);
 int			ft_get_strlen(t_data *data);
 
@@ -74,6 +75,9 @@ char		*ft_itoa(int n);
 
 // ---> ft_unsigned_itoa.c <--
 char		*ft_unsigned_itoa(unsigned int n);
+
+// ---> ft_itox.c <---
+char		*ft_itox(unsigned int n, t_data *data);
 
 // ---> ft_atoi.c <---
 int			ft_atoi(char *str, int *i);

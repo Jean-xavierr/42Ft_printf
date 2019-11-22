@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 15:32:27 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/22 11:32:33 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/22 14:21:20 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@ int		ft_strlen(char *s)
 	return (i);
 }
 
-/*int		ft_strlen_nb_hex(long nb)
+char	*ft_get_string_nb(t_data *data)
 {
-	int	i;
+	char *s;
 
-	i = 1;
-	while (nb >= 16)
-	{
-		nb = nb / 16;
-		i++;
-	}
-	return (i);
-}*/
+	if (data->convers == 'd' || data->convers == 'i')
+		s = ft_itoa((int)data->arg);
+	else if (data->convers == 'u')
+		s = ft_unsigned_itoa((unsigned int)data->arg);
+	else if (data->convers == 'x' || data->convers == 'X')
+		s = ft_itox((unsigned int)data->arg, data);
+	return (s);
+}
 
 int		ft_get_strlen(t_data *data)
 {
@@ -47,7 +47,7 @@ int		ft_get_strlen(t_data *data)
 		return (ft_strlen(ft_itoa((int)data->arg)));
 	else if (data->convers == 'u')
 		return (ft_strlen(ft_unsigned_itoa((int)data->arg)));
-/*	else if (data->convers == 'x' || data->convers == 'X')
-		return (ft_strlen_nb_hex((unsigned int)data->arg));*/
+	else if (data->convers == 'x' || data->convers == 'X')
+		return (ft_strlen(ft_itox((unsigned int)data->arg, data)));
 	return (0);
 }

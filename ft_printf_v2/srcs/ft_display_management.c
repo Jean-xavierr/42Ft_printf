@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:00:06 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/22 11:46:38 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/22 14:42:41 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,6 @@ void		ft_display_management(t_data *data)
 		ft_putstr(ft_itoa((int)data->arg), data);
 	else if (data->convers == 'u')
 		ft_putstr(ft_unsigned_itoa((unsigned int)data->arg), data);
+	else if (data->convers == 'x' || data->convers == 'X')
+		ft_putstr(ft_itox((unsigned int)data->arg, data), data);
 }

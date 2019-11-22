@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 10:15:11 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/22 11:27:44 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/22 14:10:58 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void		ft_flag_precision(t_data *data)
 
 	i = 0;
 	len_nb = ft_get_strlen(data);
-	s = ft_itoa((int)data->arg);
+	s = ft_get_string_nb(data);
 	if (data->precision > len_nb)
 	{
 		if (ft_nb_is_negative(data))
@@ -45,7 +45,7 @@ static void		ft_flag_width(t_data *data)
 	int			width;
 	char		*s;
 
-	s = ft_itoa((int)data->arg);
+	s = ft_get_string_nb(data);
 	len_nb = ft_get_strlen(data);
 	precision = data->precision;
 	if (s[0] == '0' && precision == 0)
@@ -101,7 +101,7 @@ static void		ft_flag_minus(t_data *data)
 	int		precision_tmp;
 	char	*s;
 
-	s = ft_itoa((int)data->arg);
+	s = ft_get_string_nb(data);
 	len_nb = ft_get_strlen(data);
 	precision = data->precision;
 	if (s[0] == '0' && precision == 0)
