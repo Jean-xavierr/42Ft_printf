@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 13:44:05 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 12:16:12 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 12:29:08 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,8 @@ int				ft_check_string(int i, t_data *data)
 			n++;
 		}
 	}
+	if (data->set)
+		free(data->set);
 	return (i);
 }
 

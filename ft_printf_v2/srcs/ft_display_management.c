@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:00:06 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 12:25:35 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 12:30:15 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			ft_check_string_null(t_data *data)
 	i = 0;
 	str = "(null)";
 	if (data->precision == -1)
-		precision = 5;
+		precision = 6;
 	else
 		precision = data->precision;
 	if (data->convers == 's')
