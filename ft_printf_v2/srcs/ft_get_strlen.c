@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 15:32:27 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/22 16:55:48 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 10:51:30 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int		ft_strlen(char *s)
 	int	i;
 
 	i = 0;
+	if (s == NULL)
+		return (6);
 	while (s[i])
 		i++;
 	return (i);

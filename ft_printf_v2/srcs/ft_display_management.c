@@ -6,11 +6,23 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:00:06 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/22 16:56:56 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 10:45:19 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+int			ft_check_string_null(t_data *data)
+{
+	if (data->convers == 's')
+		if (data->arg == NULL)
+		{
+			write(1, "(null)", 6);
+			data->return_printf += 6;
+			return (1);
+		}
+	return (0);
+}
 
 void		ft_putstr(char *s, t_data *data)
 {
@@ -19,6 +31,8 @@ void		ft_putstr(char *s, t_data *data)
 
 	i = 0;
 	precision = data->precision;
+	if (ft_check_string_null(data))
+		return ;
 	if (data->convers == 'p')
 	{
 		ft_putchar('0', data);
