@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 13:06:37 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/22 14:24:03 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 10:35:34 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ char		*ft_unsigned_itoa(unsigned int n);
 
 // ---> ft_itox.c <---
 char		*ft_itox(unsigned int n, t_data *data);
+
+// ---> ft_ultox.c <---
+char		*ft_ultox(unsigned long n);
 
 // ---> ft_atoi.c <---
 int			ft_atoi(char *str, int *i);
