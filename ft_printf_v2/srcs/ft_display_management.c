@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:00:06 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 11:44:10 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 12:02:33 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,19 @@
 int			ft_check_string_null(t_data *data)
 {
 	int		i;
+	int		precision;
 	char 	*str;
 
 	i = 0;
 	str = "(null)";
+	if (data->precision == -1)
+		precision = 5;
+	else
+		precision = data->precision;
 	if (data->convers == 's')
 		if (data->arg == NULL)
 		{
-			while (i < data->precision)
+			while (i < precision)
 				ft_putchar(str[i++], data);
 			return (1);
 		}
