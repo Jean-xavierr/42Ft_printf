@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 13:44:05 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 12:29:08 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 14:30:40 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,11 @@ static int		ft_check_is_minus_or_zero(int i, t_data *data)
 			while (data->set[i] >= '0' && data->set[i] <= '9')
 				data->width = data->width * 10 + (data->set[i++] - '0');
 		else if (data->set[i++] == '*')
-			data->width = va_arg(data->ap, int);
+		{
+			data->width = va_arg(data->ap, int);	
+			if (data->width < 0)
+				data->width = data->width * -1;
+		}
 		else
 		{
 			data->flags = '~';
@@ -67,7 +71,16 @@ static int		ft_check_is_minus_or_zero(int i, t_data *data)
 			while (data->set[i] >= '0' && data->set[i] <= '9')
 				data->width = data->width * 10 + (data->set[i++] - '0');
 		else if (data->set[i] == '*')
+		{
+			i++;
 			data->width = va_arg(data->ap, int);
+			if (data->width < 0)
+			{
+				data->flags = '-';
+				data->width = data->width * -1;
+			}
+
+		}
 	}
 	return (i);
 }
@@ -96,7 +109,11 @@ void			ft_check_flags(t_data *data)
 						10 + (data->set[i++] - '0');
 			}
 			else if (data->set[i++] == '*')
+			{
 				data->precision = va_arg(data->ap, int);
+				if (data->precision < 0)
+					data->precision = -1;
+			}
 		}
 		else if (i < (n = ft_check_is_width(i, data)))
 			i = n;

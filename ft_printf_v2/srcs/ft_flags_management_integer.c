@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 10:15:11 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 10:36:05 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 13:54:54 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static void		ft_flag_zero(t_data *data)
 			precision = data->precision;
 		else
 			precision = ft_get_strlen(data);
-		while (width-- > data->precision && data->precision > 0 &&
+		while (width-- > data->precision && data->precision >= 0 &&
 		width >= len_nb)
 			ft_putchar(' ', data);
 		while ((precision-- > data->width && precision >= len_nb) ||
