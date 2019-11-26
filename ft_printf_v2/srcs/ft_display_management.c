@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:00:06 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 12:02:33 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 12:25:35 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void		ft_putstr(char *s, t_data *data)
 		ft_putchar('0', data);
 		ft_putchar('x', data);
 	}
-	if ((data->convers != 's' && data->convers != 'c') && (data->precision > 0
+	if ((data->convers != 's' && data->convers != 'c') && (data->precision >= 0
 	&& s[0] != '0'))
 		precision = -1;
 	if (precision >= 0)
