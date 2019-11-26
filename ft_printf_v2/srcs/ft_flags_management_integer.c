@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 10:15:11 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 13:54:54 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 15:05:11 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,14 @@ static void		ft_flag_precision(t_data *data)
 	i = 0;
 	len_nb = ft_get_strlen(data);
 	s = ft_get_string_nb(data);
-	if (data->precision > len_nb)
+	if (ft_nb_is_negative(data))
+		ft_exception_flag_zero_integer(data);
+	else if (data->precision > len_nb)
 	{
-		if (ft_nb_is_negative(data))
-			ft_exception_flag_zero_integer(data);
-		else
-		{
 			while (data->precision-- > len_nb)
 				ft_putchar('0', data);
 			while (s[i])
 				ft_putchar(s[i++], data);
-		}
 	}
 	else
 		while (s[i])
@@ -72,15 +69,19 @@ static void		ft_flag_zero(t_data *data)
 	int	len_nb;
 	int	precision;
 	int	width;
-
+	char *s;
+	
+	s = ft_get_string_nb(data);
 	len_nb = ft_get_strlen(data);
 	precision = 0;
+	if (s[0] == '0' && data->precision == 0)
+		len_nb = 0;
 	width = data->width;
 	if (ft_nb_is_negative(data))
 		ft_exception_flag_zero_integer(data);
 	else
 	{
-		if (data->precision > 0)
+		if (data->precision >= 0)
 			precision = data->precision;
 		else
 			precision = ft_get_strlen(data);
@@ -124,7 +125,7 @@ static void		ft_flag_minus(t_data *data)
 
 void			ft_flags_management_integer(t_data *data)
 {
-	if (data->flags == '-')
+	if (data->flags == '-' && data->width > 0)
 		ft_flag_minus(data);
 	else if (data->flags == '0')
 		ft_flag_zero(data);
