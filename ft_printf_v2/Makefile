@@ -6,7 +6,7 @@
 #    By: jereligi <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 16:29:40 by jereligi          #+#    #+#              #
-#    Updated: 2019/11/22 15:38:10 by jereligi         ###   ########.fr        #
+#    Updated: 2019/11/26 15:49:42 by jereligi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS =	ft_printf.c \
 		ft_utils.c \
 		ft_check_set.c \
 		ft_strjoin.c \
+		ft_check_flags.c \
 		ft_flags_management.c \
 		ft_flags_management_integer.c \
 		ft_display_management.c \
@@ -27,7 +28,7 @@ SRCS =	ft_printf.c \
 		ft_unsigned_itoa.c \
 		ft_itox.c \
 		ft_ultox.c \
-		ft_atoi.c
+		ft_atoi.c \
 
 _SRC = $(addprefix $(PATH), $(SRCS))
 

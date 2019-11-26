@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 13:06:37 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 10:35:34 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 16:01:33 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void		ft_flags_management_integer(t_data *data);
 // ---> ft_exception_flag.c <---
 void		ft_exception_flag_zero_integer(t_data *data);
 int			ft_nb_is_negative(t_data *data);
+int			ft_len_nb(t_data *data);
 
 // ---> ft_get_strlen.c <---
 int			ft_strlen(char *s);
@@ -67,8 +68,13 @@ char		*ft_get_string_nb(t_data *data);
 int			ft_strlen_nb_hex(long nb);
 int			ft_get_strlen(t_data *data);
 
+// ---> ft_check_flags.c <---
+void		ft_call_flags_management(t_data *data);
+int			ft_check_flags_zero(int	i, t_data *data);
+int			ft_check_flags_precision(int i, t_data *data);
+
 // ---> ft_strjoin.c <---
-char				*ft_strjoin_char(char *s1, char c);
+char		*ft_strjoin_char(char *s1, char c);
 
 // ---> ft_itoa.c <---
 char		*ft_itoa(int n);

@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 10:15:11 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 15:05:11 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 15:33:08 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ static void		ft_flag_precision(t_data *data)
 		ft_exception_flag_zero_integer(data);
 	else if (data->precision > len_nb)
 	{
-			while (data->precision-- > len_nb)
-				ft_putchar('0', data);
-			while (s[i])
-				ft_putchar(s[i++], data);
+		while (data->precision-- > len_nb)
+			ft_putchar('0', data);
+		while (s[i])
+			ft_putchar(s[i++], data);
 	}
 	else
 		while (s[i])
@@ -66,16 +66,12 @@ static void		ft_flag_width(t_data *data)
 
 static void		ft_flag_zero(t_data *data)
 {
-	int	len_nb;
-	int	precision;
-	int	width;
-	char *s;
-	
-	s = ft_get_string_nb(data);
-	len_nb = ft_get_strlen(data);
+	int		len_nb;
+	int		precision;
+	int		width;
+
+	len_nb = ft_len_nb(data);
 	precision = 0;
-	if (s[0] == '0' && data->precision == 0)
-		len_nb = 0;
 	width = data->width;
 	if (ft_nb_is_negative(data))
 		ft_exception_flag_zero_integer(data);

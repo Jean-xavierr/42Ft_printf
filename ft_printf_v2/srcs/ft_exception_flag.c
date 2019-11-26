@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 10:16:04 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 15:05:05 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 15:35:18 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,16 @@ int			ft_nb_is_negative(t_data *data)
 			return (1);
 	}
 	return (0);
+}
+
+int			ft_len_nb(t_data *data)
+{
+	int		len_nb;
+	char	*s;
+
+	s = ft_get_string_nb(data);
+	len_nb = ft_get_strlen(data);
+	if (s[0] == '0' && data->precision == 0)
+		len_nb = 0;
+	return (len_nb);
 }

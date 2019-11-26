@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 15:00:06 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 14:57:10 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 15:28:03 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int			ft_check_string_null(t_data *data)
 {
 	int		i;
 	int		precision;
-	char 	*str;
+	char	*str;
 	char	*tmp;
 
 	i = 0;
@@ -24,7 +24,7 @@ int			ft_check_string_null(t_data *data)
 	tmp = (char *)data->arg;
 	if (data->precision == -1 || data->precision > 6)
 		precision = 6;
-	else 
+	else
 		precision = data->precision;
 	if (data->convers == 's')
 	{
@@ -78,5 +78,5 @@ void		ft_display_management(t_data *data)
 	else if (data->convers == 'p')
 		ft_putstr(ft_ultox((unsigned long)data->arg), data);
 	else if (ft_is_convers(data->convers) == 0)
-		ft_putchar(data->convers, data);	
+		ft_putchar(data->convers, data);
 }

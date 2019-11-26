@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 15:32:27 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 10:51:30 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/26 15:29:01 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		ft_get_strlen(t_data *data)
 	else if (data->convers == 's')
 		return (ft_strlen((char *)data->arg));
 	else if (data->convers == 'p')
-		return (ft_strlen(ft_ultox((unsigned long)data->arg)) + 2 );
+		return (ft_strlen(ft_ultox((unsigned long)data->arg)) + 2);
 	else if (data->convers == 'd' || data->convers == 'i')
 		return (ft_strlen(ft_itoa((int)data->arg)));
 	else if (data->convers == 'u')
