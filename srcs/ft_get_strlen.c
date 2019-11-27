@@ -6,7 +6,7 @@
 /*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 15:32:27 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/26 15:29:01 by jereligi         ###   ########.fr       */
+/*   Updated: 2019/11/27 10:39:11 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ char	*ft_get_string_nb(t_data *data)
 	else if (data->convers == 'p')
 		s = ft_ultox((unsigned long)data->arg);
 	else if (ft_is_convers(data->convers) == 0)
-		s[0] = data->convers;
+	{
+		s = &data->convers;
+		s[1] = '\0';
+	}
 	return (s);
 }
 
