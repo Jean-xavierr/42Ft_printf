@@ -1,4 +1,4 @@
-# Ft_printf
+# Ft_printf - @42Born2Code
 Recoder la fonction printf en C / Recode the printf function in C 
 
 ## What is the ft_printf ?
