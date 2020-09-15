@@ -12,8 +12,6 @@ As well as the following flags: -0. *.
 
 ## To do list
 
-*When I have time, fix leaks and improve the program*
+*When I have time, improve the program*
 
-- [ ] Fix leaks `%d %u %x %X %p` (leaks in `ft_display_management(t_data *data)`)
-- [ ] Add free() in ft_strjoin.c
 - [ ] Improve and restructure the code
