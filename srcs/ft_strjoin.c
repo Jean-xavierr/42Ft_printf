@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 15:02:18 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/16 14:11:09 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/15 12:03:22 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*ft_strjoin_char(char *s1, char c)
 	}
 	dst[i++] = c;
 	dst[i] = '\0';
+	free(s1);
 	return (dst);
 }
